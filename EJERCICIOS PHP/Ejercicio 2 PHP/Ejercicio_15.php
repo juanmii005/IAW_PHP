@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php 
-        $kilobytes = 1;
+        $kilobytes = 100;
         $megabytes = $kilobytes / 1000;
         $terabytes = $megabytes / 1000;
 
