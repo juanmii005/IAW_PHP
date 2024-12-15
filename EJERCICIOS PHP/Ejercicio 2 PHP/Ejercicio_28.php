@@ -2,16 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 28 PHP</title>
+    <title>Ejercicio 27 PHP</title>
 </head>
 <body>
     <?php 
-        $compra = 120;
-        $mes = "octubre";
-        $descuento = $compra * 15 / 100;
-        $compradescuento =  $compra - $descuento;
+        $numero1 = 2546120;
+        $numero2 = 354641;
 
-        echo "La tienda te hace un descuento de $descuento € y tienes que pagar $compradescuento €";
+        $suma = $numero1 + $numero2;
+        $resta = $numero1 - $numero2;
+        $multiplicacion = $numero1 * $numero2;
+        $division = $numero1 / $numero2;
+
+        echo "La suma de $numero1 + $numero2 es igual a: $suma<br>";
+        echo "La resta de $numero1 - $numero2 es igual a: $resta<br>";
+        echo "La multiplicación de $numero1 x $numero2 es igual a: $multiplicacion<br>";
+        echo "La division de $numero1 / $numero2 es igual a: $division";
     ?>
 </body>
 </html>
