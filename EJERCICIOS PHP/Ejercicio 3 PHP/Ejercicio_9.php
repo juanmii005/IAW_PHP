@@ -6,7 +6,8 @@
 </head>
 <body>
     <?php
-       $var = 1;
+       $var = 2;
+       $multiplicacion = 1;
 
        echo "La tabla del $var: <br>";
 
