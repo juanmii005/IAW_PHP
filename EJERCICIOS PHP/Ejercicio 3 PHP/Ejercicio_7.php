@@ -7,9 +7,9 @@
 <body>
     <?php
        $var = 1;
-       while ($var <= 200)
+       while ($var <= 30)
    {
-       echo "Hola <br>";
+       echo "$var al cuadrado es = ".pow($var, 2)."<br>";
        $var ++;
    }
     ?>
