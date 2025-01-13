@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 12 PHP</title>
+    <title>Ejercicio 13 PHP</title>
 </head>
 <body>
     <?php
