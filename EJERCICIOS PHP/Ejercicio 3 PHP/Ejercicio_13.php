@@ -5,18 +5,16 @@
     <title>Ejercicio 13 PHP</title>
 </head>
 <body>
-    <?php
-       $var = 1;
-       $resultado = 0;
-       $a = 1;
-       echo "La suma de los 100 siguientes numeros a $var es ";
-       while ($a <= 100)
-   {
-       $resultado += ($var + $a);
-       $a ++;
-   }
+    <form action = "Ejercicio_13.php" method = "get">
+        <input type = "text" name = "euros" placeholder="Escribe la cantidad en euros  ">
+        <button type = "sumbit" name = "boton">Calcular</button>
+    </form>
+    <?php 
+    $euros = floatval($_GET['euros']);
+    $cambio = 1.02;
+    $dolares = $euros * $cambio;
 
-    echo $resultado;
+    echo "<br>$euros euros son $dolares dólares";
     ?>
 </body>
 </html>
