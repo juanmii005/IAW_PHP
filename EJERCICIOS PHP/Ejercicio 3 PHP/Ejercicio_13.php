@@ -5,12 +5,12 @@
     <title>Ejercicio 13 PHP</title>
 </head>
 <body>
-    <form action = "Ejercicio_13.php" method = "get">
+    <form method = "get">
         <input type = "text" name = "euros" placeholder="Escribe la cantidad en euros  ">
         <button type = "sumbit" name = "boton">Calcular</button>
     </form>
     <?php 
-    $euros = floatval($_GET['euros']);
+    $euros = floatval($_GET['euros'] ?? 1);
     $cambio = 1.02;
     $dolares = $euros * $cambio;
 
