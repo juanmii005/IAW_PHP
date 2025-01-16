@@ -8,7 +8,7 @@
     <form method="get">
         <input type="text" name="numero1" placeholder="Escribe el primer número">
         <input type="text" name="numero2" placeholder="Escribe el segundo número">
-        <button type="submit" name="boton">Calcular MCD</button>
+        <button type="submit" name="boton">Calcular</button>
     </form>
 
     <?php
