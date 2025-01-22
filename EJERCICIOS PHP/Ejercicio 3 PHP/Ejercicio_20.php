@@ -26,7 +26,6 @@
 
             echo "<p>El MCD de $numero1 y $numero2 es: $a</p>";
 
-   
     ?>
 </body>
 </html>
