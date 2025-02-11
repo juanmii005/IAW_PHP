@@ -18,7 +18,7 @@
     <?php
 
         $numero1 = floatval($_GET['numero1'] ?? 1);
-        $numero2 = floatval($_GET['numero1'] ?? 1);
+        $numero2 = floatval($_GET['numero2'] ?? 1);
         $operacion = $_GET['operacion'] ?? 1;
 
         switch ($operacion) {
