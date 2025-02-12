@@ -9,7 +9,7 @@
     <form method="get">
         <input type="text" name="var" placeholder="Escribe">
         <br><br>
-        <button type="submit" name="boton">Raíz cuadrada</button>
+        <button type="submit" name="boton">Comprobar</button>
     </form>
 
     <?php
