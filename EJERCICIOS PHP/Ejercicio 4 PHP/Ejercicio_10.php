@@ -10,15 +10,14 @@
 
     <?php
         $var = "BUENOS DIAS";
-        $var2 = 'O';
+        $var2 = "O";
         $comprobacion = strpos($var, $var2);
 
 
         if (empty($comprobacion)) {
             echo "La letra '$var2' no fue encontrada en la variable '$var'";
         } else {
-        echo "La cadena '$var2' fue encontrada en la variable '$var'";
-        echo " y existe en la posición $comprobacion";
+        echo "La cadena '$var2' fue encontrada en la variable '$var' y existe en la posición $comprobacion";
         }
     ?>
 
