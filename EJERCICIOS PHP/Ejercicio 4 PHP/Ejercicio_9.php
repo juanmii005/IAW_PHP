@@ -10,7 +10,9 @@
 
     <?php
             $cadena1 = "China tiene una barbaridad de habitantes";
-            $remplazo = str_replace($cadena1, "China no mola nada");
+            $original = "China tiene una barbaridad de habitantes";
+            $sustituto = "China no mola nada";
+            $remplazo = str_replace($original, $sustituto, $cadena1);
 
             echo $remplazo;
     
