@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 16 PHP</title>
+    <title>Ejercicio 17 PHP</title>
 </head>
 <body>
-    <h1>Calcular la potencia de un número</h1>
+    <h1>Obtener el máximo y/o el mínimo de tres números</h1>
 
 
     <?php
