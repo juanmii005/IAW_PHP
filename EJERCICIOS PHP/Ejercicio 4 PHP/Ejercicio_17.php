@@ -10,11 +10,15 @@
 
     <?php
         
-        $base = 33;
-        $exponente = 10;
-        $resultado = pow($base, $exponente);
-        echo "Potencia de base $base y exponente $exponente: $resultado";
-        
+        $num1 = 33;
+        $num2 = 10;
+        $num3 = 45;
+        $maximo = max($num1, $num2, $num3);
+        $minimo = min($num1, $num2, $num3);
+
+        echo "Los numero son $num1, $num2, $num3 <br><br>";
+        echo "El número mayor es: $maximo <br>";
+        echo "El número mas chico es: $minimo";
     ?>
 
 </body>
