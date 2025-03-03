@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
     $localidad = $_POST['localidad'];
-    $centro = $_POST['centro_de_estudios'];
+    $centro_de_estudios = $_POST['centro_de_estudios'];
     $usuario = $_POST['usuario'];
     $contraseña = $_POST['contraseña'];
 
