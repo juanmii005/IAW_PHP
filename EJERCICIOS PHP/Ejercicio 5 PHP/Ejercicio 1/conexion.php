@@ -8,6 +8,6 @@ if (!$conn) {
     echo "No se ha realizado la conexión";
 }
 else {
-    echo "Conectado";
+    echo "Conectado a la base de datos correctamente<br><br>";
 }
 ?>
