@@ -6,9 +6,11 @@ function registro($conn, $dni, $nombre, $apellidos, $localidad, $centro_de_estud
 $final = mysqli_query($conn, $consulta);
     
     if($final){
-        echo "Las metio bien";
+        echo "El usuario se ha introducido correctamente en la base de datos<br><br>";
+        echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
     } else {
-        echo "No va";
+        echo "El usuario no se ha introducido en la base de datos<br><br>";
+        echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
     }
     
     return $final;
@@ -20,13 +22,18 @@ function usuarios_registrados($conn, $usuario, $contraseña) {
 
     if(mysqli_num_rows($datos) > 0){
         while($row = mysqli_fetch_assoc($datos)){
-            echo "Nombre: " . $row['nombre'] . " " . $row['apellidos'] . "<br>";
+            echo "<h2>Bienvenido a la base de datos gestión " . $row['nombre'] . " " . $row['apellidos'] . "</h2>";
+            echo "<strong>Tus datos registrados son los siguientes:</strong><br><br>";          
+            echo "Usuario: " . $row['usuario'] . "<br>";
             echo "DNI: " . $row['dni'] . "<br>";
             echo "Localidad: " . $row['localidad'] . "<br>";
-            echo "Centro de Estudio: " . $row['centro_de_estudios'] . "<br>";
+            echo "Centro de Estudios: " . $row['centro_de_estudios'] . "<br><br>";
+            echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
         }
     } else {
-        echo "Usuario no encontrado en la base de datos";
+        echo "<h2>Usuario, contraseña o ambos no coinciden con los datos de la base</h2>";
+        echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+
     }
     
     return $datos;
