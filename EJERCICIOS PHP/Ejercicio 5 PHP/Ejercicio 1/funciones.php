@@ -14,16 +14,16 @@ $final = mysqli_query($conn, $consulta);
     return $final;
 }
 
-function usuarios_registrados($conn, $Usuario, $Contrasena) {
-    $consulta = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' and Contrasena = '$Contrasena'";
+function usuarios_registrados($conn, $usuario, $contrasena) {
+    $consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario' and contraseña = '$Contraseña'";
     $datos = mysqli_query($conn, $consulta);
-    
+
     if(mysqli_num_rows($datos) > 0){
         while($row = mysqli_fetch_assoc($datos)){
-            echo "Nombre" . $row['Nombre'] . " " . $row['Apellidos'];
-            echo "DNI: " . $row['Dni'];
-            echo "Localidad: " . $row['Localidad'];
-            echo "Centro de Estudio: " . $row['Centro_de_Estudio'];
+            echo "Nombre" . $row['nombre'] . " " . $row['Apellidos'];
+            echo "DNI: " . $row['dni'];
+            echo "Localidad: " . $row['localidad'];
+            echo "Centro de Estudio: " . $row['centro_de_estudios'];
         }
     } else {
         echo "Usuario no encontrado en la base de datos";
