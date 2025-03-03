@@ -10,5 +10,4 @@ if (!$conn) {
 else {
     echo "Conectado";
 }
-
 ?>

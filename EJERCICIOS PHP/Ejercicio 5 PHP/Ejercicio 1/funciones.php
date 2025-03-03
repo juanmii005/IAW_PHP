@@ -13,4 +13,4 @@ function registro($conn, $dni, $nombre, $apellidos, $localidad, $centro_de_estud
     
     return $final;
 }
-
+?>
