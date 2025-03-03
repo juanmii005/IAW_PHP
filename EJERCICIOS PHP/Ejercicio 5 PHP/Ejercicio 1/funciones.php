@@ -6,7 +6,7 @@ function registro($conn, $dni, $nombre, $apellidos, $localidad, $centro_de_estud
 $final = mysqli_query($conn, $consulta);
     
     if($final){
-        echo "<h2>El usuario" . $row['usuario'] . "se ha introducido correctamente en la base de datos</h2>";
+        echo "<h2>El usuario se ha introducido correctamente en la base de datos</h2>";
         echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
     } else {
         echo "<h2>El usuario no se ha introducido en la base de datos</h2>";
