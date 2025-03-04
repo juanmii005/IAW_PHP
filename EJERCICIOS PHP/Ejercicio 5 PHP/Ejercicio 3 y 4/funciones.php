@@ -41,4 +41,30 @@ function registro_alumnos($conn, $dni, $nombre, $apellidos, $localidad, $año_in
 
 }
 
+function consultar_alumno($conn, $dni) {
+    $consulta = "SELECT * FROM alumnos WHERE dni = '$dni'";
+    $informacion = mysqli_query($conn, $consulta);
+
+    if(mysqli_num_rows($informacion) > 0){
+        while($row = mysqli_fetch_assoc($informacion)){
+            echo "<h2>El alumno " . $row['nombre'] . " " . $row['apellidos'] . " esta registrado en la base de datos</h2>";
+            echo "<strong>Los datos registrados son los siguientes:</strong><br><br>";          
+            echo "Nombre: " . $row['nombre'] . "<br>";
+            echo "Apellidos: " . $row['apellidos'] . "<br>";
+            echo "DNI: " . $row['dni'] . "<br>";
+            echo "Localidad: " . $row['localidad'] . "<br>";
+            echo "Año de inicio: " . $row['año_inicio'] . "<br>";
+            echo "Modo de acceso: " . $row['acceso'] . "<br><br>";
+            echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+        }
+    } else {
+        echo "<h2>El alumno no esta registrado</h2>";
+        echo "<center><a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
+
+    }
+    
+    return $informacion;
+}
+
+
 ?>
