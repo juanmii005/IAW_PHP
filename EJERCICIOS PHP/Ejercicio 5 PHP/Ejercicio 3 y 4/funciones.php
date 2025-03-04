@@ -47,7 +47,7 @@ function consultar_asignatura($conn, $codigo) {
 
     if(mysqli_num_rows($informacion) > 0){
         while($row = mysqli_fetch_assoc($informacion)){
-            echo "<center><h2>La asignatura " . $row['nombre'] . " esta registradA en la base de datos</h2>";
+            echo "<center><h2>La asignatura " . $row['nombre'] . " esta registrada en la base de datos</h2>";
             echo "<strong>Los datos registrados son los siguientes:</strong><br><br>";          
             echo "Nombre: " . $row['nombre'] . "<br>";
             echo "Codigo: " . $row['codigo'] . "<br>";
