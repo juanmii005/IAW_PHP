@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO ALUMNO</title>
+</head>
+<body>
+    <fieldset>
+        <center>
+            <h1>INTRODUZCA LOS DATOS DEL ALUMNO QUE QUIERES REGISTRAR</h1>
+            <form action="registrar_alumnos.php" method="POST">
+                <label>DNI:</label>
+                <input name="dni" required type="text"><br><br>
+                <label>Nombre:</label>
+                <input name="nombre" required type="text"><br><br>
+                <label>Apellidos:</label>
+                <input name="apellidos" required type="text"><br><br>
+                <label>Localidad:</label>
+                <input name="localidad" required type="text"><br><br>
+                <label>Año inicio:</label>
+                <input name="año_inicio" required type="text"><br><br>
+                <label>Acceso:</label>
+                <input name="acceso" required type="text"><br><br>
+                <button type="submit">REGISTRAR</button>
+            </form>
+        </center>
+    </fieldset>
+</body>
+</html>
