@@ -41,8 +41,8 @@ function registro_alumnos($conn, $dni, $nombre, $apellidos, $localidad, $año_in
 
 }
 
-function consultar_asignatura($conn, $codigo) {
-    $consulta = "SELECT * FROM asignaturas WHERE codigo = '$codigo'";
+function consultar_asignatura($conn) {
+    $consulta = "SELECT * FROM asignaturas";
     $informacion = mysqli_query($conn, $consulta);
 
     if(mysqli_num_rows($informacion) > 0){
@@ -52,19 +52,19 @@ function consultar_asignatura($conn, $codigo) {
             echo "Nombre: " . $row['nombre'] . "<br>";
             echo "Codigo: " . $row['codigo'] . "<br>";
             echo "Creditos: " . $row['numero_creditos'] . "<br><br>";
-            echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
         }
     } else {
         echo "<center><h2>La asignatura no esta registrada</h2>";
-        echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
-
     }
     
     return $informacion;
+
+    echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+
 }
 
-function consultar_alumno($conn, $dni) {
-    $consulta = "SELECT * FROM alumnos WHERE dni = '$dni'";
+function consultar_alumno($conn) {
+    $consulta = "SELECT * FROM alumnos";
     $informacion = mysqli_query($conn, $consulta);
 
     if(mysqli_num_rows($informacion) > 0){
@@ -77,15 +77,44 @@ function consultar_alumno($conn, $dni) {
             echo "Localidad: " . $row['localidad'] . "<br>";
             echo "Año de inicio: " . $row['año_inicio'] . "<br>";
             echo "Modo de acceso: " . $row['acceso'] . "<br><br>";
-            echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
         }
     } else {
         echo "<center><h2>El alumno no esta registrado</h2>";
-        echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
-
     }
     
     return $informacion;
+
+    echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+
 }
 
+function matricular_alumnos($conn, $dni, $codAsignatura) {
+
+    $consulta = "SELECT dni FROM matriculacion WHERE dni = '$dni' AND codigo_asignatura = '$codAsignatura'";
+    $comprobacion = mysqli_query($conn, $consulta);
+
+    if (mysqli_num_rows($comprobacion) > 0) 
+    {
+        echo "<center><h2>El alumnos ya esta registrado en esa asignatura</h2>";
+        echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
+    }
+    else
+    {
+        $insercion = "INSERT INTO matriculacion (dni, codigo_asignatura) VALUES ('$dni', '$codAsignatura')";
+        $matriculacion = mysqli_query($conn, $insercion);
+        
+        if ($matriculacion) 
+        {
+            echo "<center><h2>El alumno se ha registrado correctamente en la/a asignatura/s</h2>";
+            echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
+        } 
+        else 
+        {
+            echo "<center><h2>No se ha podido matricular al alumno en la/a asignatura/s</h2>";
+            echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
+        }
+        
+        return $matriculacion;
+        }
+}
 ?>

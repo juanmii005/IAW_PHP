@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATRICULAR ALUMNO ALUMNO</title>
+</head>
+<body>
+    <fieldset>
+        <center>
+            <h1>INTRODUZCA EL DNI DEL ALUMNO Y LAS ASIGNATURAS EN LAS QUE LO QUIERES MATRICULAR</h1>
+            <form action="matricular_alumno.php" method="POST">
+                <label for="dni">DNI:</label>
+                <input name="dni"></input>
+                <br><br>
+                <select name="codAsignatura">
+                    <option value="">ELIGE LA ASIGNATURA</option>
+                    <option value="1">ASOR</option>
+                    <option value="2">ASGBD</option>
+                    <option value="3">SRI</option>
+                    <option value="4">SAD</option>
+                    <option value="5">IAW</option>
+                    <option value="6">EIE</option>
+                  </select>
+                <button type="submit">MATRICULAR</button>
+            </form>
+        </center>
+    </fieldset>
+</body>
+</html>
