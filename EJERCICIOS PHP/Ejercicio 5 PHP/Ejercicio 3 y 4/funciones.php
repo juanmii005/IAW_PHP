@@ -147,5 +147,4 @@ function consultar_matriculaciones($conn) {
 
 
 }
-
 ?>
