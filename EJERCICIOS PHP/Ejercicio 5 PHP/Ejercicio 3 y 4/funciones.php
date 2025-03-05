@@ -41,53 +41,6 @@ function registro_alumnos($conn, $dni, $nombre, $apellidos, $localidad, $año_in
 
 }
 
-function consultar_asignatura($conn) {
-    $consulta = "SELECT * FROM asignaturas";
-    $informacion = mysqli_query($conn, $consulta);
-
-    if(mysqli_num_rows($informacion) > 0){
-        while($row = mysqli_fetch_assoc($informacion)){
-            echo "<center><h2>La asignatura " . $row['nombre'] . " esta registrada en la base de datos</h2>";
-            echo "<strong>Los datos registrados son los siguientes:</strong><br><br>";          
-            echo "Nombre: " . $row['nombre'] . "<br>";
-            echo "Codigo: " . $row['codigo'] . "<br>";
-            echo "Creditos: " . $row['numero_creditos'] . "<br><br>";
-        }
-    } else {
-        echo "<center><h2>La asignatura no esta registrada</h2>";
-    }
-    
-    return $informacion;
-
-    echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
-
-}
-
-function consultar_alumno($conn) {
-    $consulta = "SELECT * FROM alumnos";
-    $informacion = mysqli_query($conn, $consulta);
-
-    if(mysqli_num_rows($informacion) > 0){
-        while($row = mysqli_fetch_assoc($informacion)){
-            echo "<center><h2>El alumno " . $row['nombre'] . " " . $row['apellidos'] . " esta registrado en la base de datos</h2>";
-            echo "<strong>Los datos registrados son los siguientes:</strong><br><br>";          
-            echo "Nombre: " . $row['nombre'] . "<br>";
-            echo "Apellidos: " . $row['apellidos'] . "<br>";
-            echo "DNI: " . $row['dni'] . "<br>";
-            echo "Localidad: " . $row['localidad'] . "<br>";
-            echo "Año de inicio: " . $row['año_inicio'] . "<br>";
-            echo "Modo de acceso: " . $row['acceso'] . "<br><br>";
-        }
-    } else {
-        echo "<center><h2>El alumno no esta registrado</h2>";
-    }
-    
-    return $informacion;
-
-    echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
-
-}
-
 function matricular_alumnos($conn, $dni, $codAsignatura) {
 
     $consulta = "SELECT dni FROM matriculacion WHERE dni = '$dni' AND codigo_asignatura = '$codAsignatura'";
@@ -117,4 +70,82 @@ function matricular_alumnos($conn, $dni, $codAsignatura) {
         return $matriculacion;
         }
 }
+
+function consultar_asignatura($conn) {
+    $consulta = "SELECT * FROM asignaturas";
+    $informacion = mysqli_query($conn, $consulta);
+
+    if(mysqli_num_rows($informacion) > 0){
+        while($row = mysqli_fetch_assoc($informacion)){
+            echo "<fieldset>";
+            echo "<center><h2>La asignatura " . $row['nombre'] . " esta registrada en la base de datos</h2>";
+            echo "<strong>Los datos registrados son los siguientes:</strong><br><br>";          
+            echo "Nombre: " . $row['nombre'] . "<br>";
+            echo "Codigo: " . $row['codigo'] . "<br>";
+            echo "Creditos: " . $row['numero_creditos'] . "<br><br>";
+            echo "</fieldset>";
+        }
+        echo "<center><a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+    } else {
+        echo "<center><h2>La asignatura no esta registrada</h2>";
+        echo "<center><a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+    }
+    
+    return $informacion;
+
+    echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+
+}
+
+function consultar_alumno($conn) {
+    $consulta = "SELECT * FROM alumnos";
+    $informacion = mysqli_query($conn, $consulta);
+
+    if(mysqli_num_rows($informacion) > 0){
+        while($row = mysqli_fetch_assoc($informacion)){
+            echo "<fieldset><center><h2>El alumno " . $row['nombre'] . " " . $row['apellidos'] . " esta registrado en la base de datos</h2>";
+            echo "<strong>Los datos registrados son los siguientes:</strong><br><br>";          
+            echo "Nombre: " . $row['nombre'] . "<br>";
+            echo "Apellidos: " . $row['apellidos'] . "<br>";
+            echo "DNI: " . $row['dni'] . "<br>";
+            echo "Localidad: " . $row['localidad'] . "<br>";
+            echo "Año de inicio: " . $row['año_inicio'] . "<br>";
+            echo "Modo de acceso: " . $row['acceso'] . "<br><br>";
+            echo "</fieldset>";
+        }
+        echo "<center><a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+    } else {
+        echo "<center><h2>No hay alumnos registrados</h2>";
+        echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+    }
+    
+    return $informacion;
+
+
+}
+
+function consultar_matriculaciones($conn) {
+    $consulta = "SELECT * FROM matriculacion";
+    $informacion = mysqli_query($conn, $consulta);
+
+    if(mysqli_num_rows($informacion) > 0){
+        while($row = mysqli_fetch_assoc($informacion)){
+            echo "<fieldset>";
+            echo "<center><h2>La matricula " . $row['codigo'] . " tiene los siguientes datos:</h2>";
+            echo "Codigo: " . $row['codigo'] . "<br>";
+            echo "DNI: " . $row['dni'] . "<br>";
+            echo "Codigo Asignatura: " . $row['codigo_asignatura'] . "<br><br>";
+            echo "</fieldset>";
+        }
+        echo "<center><a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+    } else {
+        echo "<center><h2>No hay matriculas registradas</h2>";
+        echo "<center><a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA DE INICIO</a>";
+    }
+    
+    return $informacion;
+
+
+}
+
 ?>
