@@ -116,7 +116,7 @@ function consultar_nombre($conn, $nombre) {
         }
         echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
     } else {
-        echo "<center><h2>No se ha podido encontrar el instrumento con ese id</h2>";
+        echo "<center><h2>No se ha podido encontrar el instrumento con ese nombre</h2>";
             echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
     }
 
@@ -137,7 +137,7 @@ function consultar_tipo($conn, $tipo) {
         }
         echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
     } else {
-        echo "<center><h2>No se ha podido encontrar el instrumento con ese id</h2>";
+        echo "<center><h2>No se ha podido encontrar un instrumento de ese tipo</h2>";
             echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
     }
 
@@ -158,7 +158,7 @@ function consultar_origen($conn, $origen) {
         }
         echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
     } else {
-        echo "<center><h2>No se ha podido encontrar el instrumento con ese id</h2>";
+        echo "<center><h2>No se ha podido encontrar un instrumento con ese origen</h2>";
             echo "<a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>";
     }
 
