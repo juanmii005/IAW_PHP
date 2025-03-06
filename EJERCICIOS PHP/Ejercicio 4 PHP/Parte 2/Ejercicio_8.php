@@ -5,17 +5,16 @@
     <title>Ejercicio 8 PHP</title>
 </head>
 <body>
-    <h1>ÁREA CIRCULO</h1>
-    <form method="get">
-        <input type="text" name="radio" placeholder="Escribe">
-        <br><br>
-        <button type="submit" name="boton">Calcular</button>
-    </form>
+    <h1>Obtener los números primos anteriores a N</h1>
     <?php
-        $radio = $_GET["radio"] ?? 1;
-        $area = areaCirculo($radio);
-        function areaCirculo($radio) {return pi() * pow($radio, 2);}
-        echo "<br>El área del círculo con radio $radio es: $area";
+        function primosAnteriores($n) {
+            $primos = [];
+            for ($i = 2; $i < $n; $i++) {
+                if (esPrimo($i)) $primos[] = $i;
+            }
+            return implode(", ", $primos);
+        }
+        echo "Primos anteriores a 20: " . primosAnteriores(20);
     ?>
 </body>
 </html>

@@ -5,18 +5,14 @@
     <title>Ejercicio 10 PHP</title>
 </head>
 <body>
-    <h1>NÚMERO PRIMO</h1>
-    <form method="get">
-        <input type="text" name="num" placeholder="Pon un numeo">
-        <br><br>
-        <button type="submit" name="boton">Comprobar</button>
-    </form>
+    <h1>Factorial de cada número entre dos dados</h1>
     <?php
-        function esprimo($numero) {
-            
+        function factorialEntre($a, $b) {
+            for ($i = $a; $i <= $b; $i++) {
+                echo "Factorial de $i: " . factorial($i) . "<br>";
+            }
         }
-
+        factorialEntre(3, 6);
     ?>
-
 </body>
 </html>

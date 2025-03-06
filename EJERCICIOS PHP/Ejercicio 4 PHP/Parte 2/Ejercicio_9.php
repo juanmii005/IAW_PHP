@@ -5,17 +5,13 @@
     <title>Ejercicio 9 PHP</title>
 </head>
 <body>
-    <h1>ÁREA CIRCULO</h1>
-    <form method="get">
-        <input type="text" name="radio" placeholder="Escribe">
-        <br><br>
-        <button type="submit" name="boton">Calcular</button>
-    </form>
+    <h1>Cálculo del factorial de un número</h1>
     <?php
-        $radio = $_GET["radio"] ?? 1;
-        $area = areaCirculo($radio);
-        function areaCirculo($radio) {return pi() * pow($radio, 2);}
-        echo "<br>El área del círculo con radio $radio es: $area";
+        function factorial($n) {
+            return ($n <= 1) ? 1 : $n * factorial($n - 1);
+        }
+        $resultado = factorial(5);
+        echo "El factorial de 5 es: $resultado";
     ?>
 </body>
 </html>

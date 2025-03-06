@@ -5,7 +5,7 @@
     <title>Ejercicio 2 PHP</title>
 </head>
 <body>
-    <h1>ÁREA CIRCULO</h1>
+    <h1>Área circulo</h1>
     <form method="get">
         <input type="text" name="radio" placeholder="Escribe">
         <br><br>
