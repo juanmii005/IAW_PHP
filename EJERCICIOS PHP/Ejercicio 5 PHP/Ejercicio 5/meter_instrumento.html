@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO INSTRUMENTO</title>
+</head>
+<body>
+    <fieldset>
+        <center>
+            <h1>INTRODUZCA LOS DATOS DEL INTRUMENTO QUE QUIERES REGISTRAR</h1>
+            <form action="meter_instrumento.php" method="POST">
+                <label>Nombre:</label>
+                <input name="nombre" required type="text"><br><br>
+                <label>Tipo:</label>
+                  <select name="tipo">
+                    <option value="Viento">Viento</option>
+                    <option value="Cuerda">Cuerda</option>
+                    <option value="Percusion">Percusion</option>
+                    <option value="Electricos">Electricos</option>
+                  </select><br><br>                
+                <label>Origen:</label>
+                  <select name="origen">
+                    <option value="Aborigen">Aborigen</option>
+                    <option value="Cubano">Cubano</option>
+                    <option value="Europeo">Europeo</option>
+                    <option value="Mexicano">Mexicano</option>
+                    <option value="Guatemalteco">Guatemalteco</option>
+                  </select><br><br>                
+                <label>Modelo:</label>
+                <input name="modelo" required type="text"><br><br>
+                <button type="submit">REGISTRAR</button>
+            </form>
+            <br><br>
+            <a href='inicio.html'>PULSA AQUI PARA VOLVER A LA PÁGINA PRINCIPAL</a>
+        </center>
+    </fieldset>
+</body>
+</html>
